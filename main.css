@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button, input[type="radio", type="submit"] {
+  padding: 5px;
+}
+
+button {
+	float: right;
+	margin-right: 40px;
+}
+
+input[type="submit"] {
+	float: left;
+	margin-left: 40px;
+}
+
+button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+}
+
+h1 {
+	padding: 2px 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+.answers {
+	padding: 2px 0;
+}
