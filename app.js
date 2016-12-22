@@ -42,13 +42,13 @@ var questionTitle = document.getElementById('questionTitle');
 var selectionList = document.getElementById('selectionList');
 var nextButton = document.getElementById('nextButton');
 var submitButton = document.getElementById('submitButton');
+var qCount = document.getElementById('qCount');
 var i = 0;
 var length1 = allQuestions.length;
 var correctAnswer = 0;
 var result = document.getElementById('result');
 
 // FILLING IN QUESTIONS AND ANSWERS
-	// How do I have it start on the first question?
 
 nextButton.onclick = function() {
     if(i>allQuestions.length){ 
@@ -57,6 +57,7 @@ nextButton.onclick = function() {
     populateQuestion(i);
     i++;
 };
+
 
 function populateQuestion(qNum) {
     var individualQuestion = allQuestions[i];
@@ -67,7 +68,7 @@ function populateQuestion(qNum) {
         var choiceText = individualQuestion.choices[key];
         selectionList.appendChild(createLi(radioBtnName,choiceText));
     }
-}
+};
 
 function createLi(name, choiceText) {
         var e = document.createElement('li');
@@ -76,7 +77,7 @@ function createLi(name, choiceText) {
         radioHtml += choiceText;        
         e.innerHTML = radioHtml;        
         return e;
-    }
+    };
 
 // SUBMITTING ANSWER
 	// Submit button is having it "refresh"
@@ -90,4 +91,14 @@ submitButton.onclick = function() {
 	else {
 		result.innerHTML = result.innerHTML + "Wrong. The answer is " + correctAnswer;
 	}*/
-}
+};
+
+// COUNTING ==== Not working
+/*
+$(document).ready(function() {  
+    var clickCount = 0;
+    $(nextButton).click(function() {
+        clickCount++;
+        $(qCount).text(clickCount + "/10")   
+});
+*/
