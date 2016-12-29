@@ -63,7 +63,7 @@ function populateQuestion(qNum) {
 // Creating New li Answers
 function createLi(name, choiceText) {
     var answerOption = document.createElement('li');
-    var radioHtml = '<input type="radio" name="option" value="' + allQuestions[i].correctAnswer + '"' + name + '"'; // value undefined   
+    var radioHtml = '<input type="radio" name="option" value="' + allQuestions[i].choices[key] + '"' + name + '"'; // value undefined   
     radioHtml += '/>';
     radioHtml += choiceText;        
     answerOption.innerHTML = radioHtml;        
@@ -72,17 +72,16 @@ function createLi(name, choiceText) {
 
 // Showing if answer is correct or not when radio clicked
 $(canadaForm, 'input[name=option]').on('click', function() {
-    var answerOption = document.createElement('li');
-    answer = $("input[name=option]:checked").val()
-    userAnswer = $("input [name=option]:checked").text() // <<< not sure how to get the answer option text to compare
-    console.log(answer)
+    userAnswer = $("input[name=option]:checked").val() 
+    i = 0
     console.log(userAnswer)
+    console.log(allQuestions[i].correctAnswer)  // this is messing up the populating questions. Why???
     /*
-    if (userAnswer == answer) {
+    if (userAnswer == allQuestions[--i].correctAnswer) {
         alert("Good job!");
     }
     else {
-        alert("Wrong. The correct answer is " + userAnswer);
-    } 
+        alert("Wrong. The correct answer is " + allQuestions[i].correctAnswer);
+    };
     */
 });
