@@ -73,7 +73,7 @@ function createLi(name, choiceText) {
 // Showing if answer is correct or not when radio clicked
 $(canadaForm, 'input[name=option]').on('click', function() {
     userAnswer = $("input[name=option]:checked").val() 
-    i = 0
+    --i
     console.log(userAnswer)
     console.log(allQuestions[i].correctAnswer)  // this is messing up the populating questions. Why???
     /*
