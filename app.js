@@ -28,6 +28,7 @@ var qCount = document.getElementById('qCount');
 var canadaForm = document.getElementById('canadaForm');
 var i = 0;
 var clickCount = 0;
+var a = -1;
 
 
 $(nextButton).on('click', function() {  
@@ -44,7 +45,7 @@ $(nextButton).on('click', function() {
         i=0;       
         }    
     populateQuestion(i);
-    i++;
+    i++
 }); 
 
 
@@ -73,15 +74,12 @@ function createLi(name, choiceText) {
 // Showing if answer is correct or not when radio clicked
 $(canadaForm, 'input[name=option]').on('click', function() {
     userAnswer = $("input[name=option]:checked").val() 
-    --i
-    console.log(userAnswer)
-    console.log(allQuestions[i].correctAnswer)  // this is messing up the populating questions. Why???
-    /*
-    if (userAnswer == allQuestions[--i].correctAnswer) {
+    a++
+    if (userAnswer == allQuestions[a].correctAnswer) {
         alert("Good job!");
     }
     else {
-        alert("Wrong. The correct answer is " + allQuestions[i].correctAnswer);
+        alert("Wrong. The correct answer is " + allQuestions[a].correctAnswer);
     };
-    */
+    
 });
